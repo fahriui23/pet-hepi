@@ -30,5 +30,5 @@ npm run lint
 npm run build
 ```
 
-The game art and cursor assets, including the generated grooming-brush cursor,
-live in `public/`.
+The game art and cursor assets live in `public/`, including the generated
+grooming-brush cursor and four animated Hepi doodle decorations.

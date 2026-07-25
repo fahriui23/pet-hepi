@@ -213,6 +213,41 @@ export default function Home() {
         <span className="header-note">Made with paws &amp; patience</span>
       </header>
 
+      <div className="doodle-layer" aria-hidden="true">
+        <Image
+          src="/hepi-doodle-1.png"
+          alt=""
+          width={480}
+          height={480}
+          sizes="(max-width: 600px) 26vw, 160px"
+          className="hepi-doodle doodle-one"
+        />
+        <Image
+          src="/hepi-doodle-2.png"
+          alt=""
+          width={480}
+          height={480}
+          sizes="(max-width: 600px) 30vw, 190px"
+          className="hepi-doodle doodle-two"
+        />
+        <Image
+          src="/hepi-doodle-3.png"
+          alt=""
+          width={480}
+          height={480}
+          sizes="(max-width: 600px) 25vw, 150px"
+          className="hepi-doodle doodle-three"
+        />
+        <Image
+          src="/hepi-doodle-4.png"
+          alt=""
+          width={480}
+          height={480}
+          sizes="(max-width: 600px) 30vw, 190px"
+          className="hepi-doodle doodle-four"
+        />
+      </div>
+
       <section className="game-layout" id="game">
         <div className="game-copy">
           <p className="eyebrow">pspsps... Hepi is waiting!</p>

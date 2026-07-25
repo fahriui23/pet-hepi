@@ -77,6 +77,55 @@ a:focus-visible {
   transform: rotate(-18deg);
 }
 
+.doodle-layer {
+  position: absolute;
+  z-index: 0;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.hepi-doodle {
+  --tilt: 0deg;
+  position: absolute;
+  height: auto;
+  object-fit: contain;
+  filter: drop-shadow(0 12px 14px rgba(116, 72, 92, 0.16));
+  opacity: 0.9;
+  animation: doodle-float 5.5s ease-in-out infinite;
+}
+
+.doodle-one {
+  --tilt: -9deg;
+  top: 122px;
+  left: max(8px, calc((100vw - 1320px) / 2));
+  width: clamp(108px, 10vw, 158px);
+}
+
+.doodle-two {
+  --tilt: 8deg;
+  right: max(-12px, calc((100vw - 1390px) / 2));
+  bottom: 68px;
+  width: clamp(145px, 13vw, 195px);
+  animation-delay: -2.4s;
+}
+
+.doodle-three {
+  --tilt: 7deg;
+  top: 43%;
+  right: max(5px, calc((100vw - 1325px) / 2));
+  width: clamp(105px, 9vw, 145px);
+  animation-delay: -4s;
+}
+
+.doodle-four {
+  --tilt: -5deg;
+  bottom: 18px;
+  left: max(22px, calc((100vw - 1220px) / 2));
+  width: clamp(140px, 13vw, 192px);
+  animation-delay: -1.2s;
+}
+
 .game-header,
 footer {
   position: relative;
@@ -600,6 +649,16 @@ footer {
   }
 }
 
+@keyframes doodle-float {
+  0%,
+  100% {
+    transform: translateY(0) rotate(var(--tilt));
+  }
+  50% {
+    transform: translateY(-12px) rotate(calc(var(--tilt) + 2deg));
+  }
+}
+
 @keyframes meter-pulse {
   to {
     background: linear-gradient(90deg, #f04f7f, #ff8d78);
@@ -623,6 +682,34 @@ footer {
 @media (max-width: 800px) {
   .game-root {
     overflow: visible;
+  }
+
+  .doodle-layer {
+    opacity: 0.55;
+  }
+
+  .doodle-one {
+    top: 110px;
+    left: -22px;
+    width: 104px;
+  }
+
+  .doodle-two {
+    right: -30px;
+    bottom: 75px;
+    width: 145px;
+  }
+
+  .doodle-three {
+    top: 47%;
+    right: -25px;
+    width: 100px;
+  }
+
+  .doodle-four {
+    bottom: 25%;
+    left: -28px;
+    width: 132px;
   }
 
   .game-layout {
@@ -659,6 +746,29 @@ footer {
 
   .header-note {
     display: none;
+  }
+
+  .doodle-layer {
+    opacity: 0.42;
+  }
+
+  .doodle-two,
+  .doodle-four {
+    display: none;
+  }
+
+  .doodle-one {
+    top: 92px;
+    left: auto;
+    right: -28px;
+    width: 92px;
+  }
+
+  .doodle-three {
+    top: 50%;
+    right: auto;
+    left: -28px;
+    width: 92px;
   }
 
   h1 {
